@@ -6,26 +6,22 @@ package mmap
 
 import "syscall"
 
-var (
-	EJS  = syscall.NewError("not supported by js")
-)
-
 func mmap(len int, inprot, inflags, fd uintptr, off int64) ([]byte, error) {
-	return nil, EJS
+	return nil, syscall.ENOTSUP
 }
 
 func (m MMap) flush() error {
-	return EJS
+	return syscall.ENOTSUP
 }
 
 func (m MMap) lock() error {
-	return EJS
+	return syscall.ENOTSUP
 }
 
 func (m MMap) unlock() error {
-	return EJS
+	return syscall.ENOTSUP
 }
 
 func (m MMap) unmap() error {
-	return EJS
+	return syscall.ENOTSUP
 }
